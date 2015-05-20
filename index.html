@@ -11,22 +11,32 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-
     <!-- APP SCRIPTS -->
     <script src="app.js"></script>
   </head>
   <body ng-app="starter">
     <ng-include src="'navbar.html'"></ng-include>
 
-    <div class="container" ng-controller="MyFirstCtrl">
+    <div class="container" ng-controller="MovieCtrl">
       <p class='text-right'>
         <button class='btn btn-default' ng-click="addPoint()">Add Point</button>
       </p>
+      <p class='text-right'>
+        <button class='btn btn-default' ng-click="changeNavColor()">Change Navbar Color</button>
+      </p>
 
-      <form ng-submit="searchMovies">
-        <input ng-model='search'>
-        <button type="submit">
+      <!-- CHALLENGE 2 -->
+      <form ng-submit="searchMovies()">
+        <div class="row">
+          <div class='col-sm-4'>
+            <input ng-model='search' class='form-control' placeholder="Search Movie Titles"/>
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </div>
       </form>
+
+      <!-- CHALLENGE 1 & 2 -->
+      <h2>Movies</h2>
       <div ng-repeat="movie in movies">
         {{movie.Title}}
       </div>
@@ -34,7 +44,7 @@
 
 
     <script type="text/ng-template" id="navbar.html">
-      <nav class="navbar navbar-inverse" style="border-radius:0;" ng-controller="NavbarCtrl">
+      <nav class="navbar navbar-inverse" style="border-radius:0;" ng-controller="NavbarCtrl" ng-style="{ 'background-color': navColor }">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
