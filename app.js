@@ -9,7 +9,19 @@ angular.module('starter', [])
     })
   }])
 
-  .controller("MyFirstCtrl", ['$scope', '$rootScope', function ($scope, $rootScope) {
+  .controller("MovieCtrl", ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+    $scope.searchMovies = function() {
+      $http.get('http://www.omdbapi.com/?s=' + $scope.search)
+        .success(function(data) {
+          console.log("Succeeded : ) ");
+          console.log(data);
+          // $scope.movies = data.Search
+        }).failure(function(data) {
+          console.log("Failed : ( ");
+          $scope.movies = [];
+        })
+    }
 
     $scope.foo = { bar: 'My First Angular App' }
 

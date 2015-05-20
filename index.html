@@ -19,18 +19,17 @@
     <ng-include src="'navbar.html'"></ng-include>
 
     <div class="container" ng-controller="MyFirstCtrl">
-
-      <div class='form-group'>
-        <label>Home</label>
-        <input ng-model="foo.bar" class='form-control' autofocus/>
-      </div>
-      <p>
-        <i class="icon ion-home"></i> {{foo.bar}} 
-      </p>
-
       <p class='text-right'>
         <button class='btn btn-default' ng-click="addPoint()">Add Point</button>
       </p>
+
+      <form ng-submit="searchMovies">
+        <input ng-model='search'>
+        <button type="submit">
+      </form>
+      <div ng-repeat="movie in movies">
+        {{movie.Title}}
+      </div>
     </div>
 
 
