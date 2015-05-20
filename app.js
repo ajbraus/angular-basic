@@ -9,9 +9,7 @@ angular.module('starter', [])
     })
   }])
 
-  .controller("MyFirstCtrl", ['$scope', '$rootScope', function ($scope, $rootScope) {
-
-    $scope.foo = { bar: 'My First Angular App' }
+  .controller("MovieCtrl", ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.addPoint = function() {
       $rootScope.$broadcast('addPoint')

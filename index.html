@@ -18,16 +18,7 @@
   <body ng-app="starter">
     <ng-include src="'navbar.html'"></ng-include>
 
-    <div class="container" ng-controller="MyFirstCtrl">
-
-      <div class='form-group'>
-        <label>Home</label>
-        <input ng-model="foo.bar" class='form-control' autofocus/>
-      </div>
-      <p>
-        <i class="icon ion-home"></i> {{foo.bar}} 
-      </p>
-
+    <div class="container" ng-controller="MovieCtrl">
       <p class='text-right'>
         <button class='btn btn-default' ng-click="addPoint()">Add Point</button>
       </p>
